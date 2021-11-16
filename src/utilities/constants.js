@@ -6,4 +6,4 @@ export const httpStatusCode = {
    INTERNAL_SERVER: 500
 }
 
-export const whitelist = ['http://localhost:3000']
+export const whitelist = ['http://localhost:3000','https://trello-91048.web.app']
