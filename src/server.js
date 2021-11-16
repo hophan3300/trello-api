@@ -2,7 +2,7 @@ import express from "express";
 import cors from 'cors'
 
 import { connectDB, getDB } from "*/config/mongodb";
-import { env } from '*/config/environtment'
+// import { env } from '*/config/environtment'
 import { apiV1 } from '*/routes/v1'
 import { corsOptions} from './config/cors'
 
@@ -24,7 +24,11 @@ const bootServer = () => {
 
    app.use('/v1', apiV1)         // dung api v1
    
-   app.listen(env.APP_PORT, env.APP_HOST, () => {
-      console.log(`Server is running at ${env.APP_HOST}:${env.APP_PORT}/`)
+   // app.listen(env.APP_PORT, env.APP_HOST, () => {
+   //    console.log(`Server is running at ${env.APP_HOST}:${env.APP_PORT}/`)
+   // })
+   // heroku deloy
+   app.listen(process.env.PORT , () => {
+      console.log(`Server is running at :${process.env.PORT}/`)
    })
 }
